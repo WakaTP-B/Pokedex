@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box; /* Très courant */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif; /* Police de base */
+  line-height: 1.5;                  /* Meilleure lisibilité */
+  background-color: #f9fafb;         /* Fond léger  #f9fafb;*/
+  color: #111;                       /* Texte principal */
+}
+/* Supprime marges par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Meilleure lisibilité des textes */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Pour un rendu plus net */
+}
+
+/* Images réactives */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Les inputs héritent la police */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Supprimer puces par défaut des listes */
+ul, ol {
+  list-style: none;
+}
