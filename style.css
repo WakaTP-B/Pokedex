@@ -2,11 +2,14 @@
 * {
   margin: 0;
   padding: 0;
+  border: solid 1px black;
 }
 
 /* Body */
 body {
-display: flex;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Titre */
@@ -17,21 +20,27 @@ h1 {
 
 /* Container */
 .container {
-
+  display: flex;
+  min-height: 0;
 }
 
 /* Section Pokémon */
 .pokemon-list {
-width: 30%;
+  width: 40%;
+  overflow-y: auto;
 }
 
 /* Card Pokémon */
 .pokemon-card {
-
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 
 /* Pokemon detail */
 .pokemon-detail {
-
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
