@@ -1,21 +1,38 @@
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/10")
-    .then(response_obj => response_obj.json())
-    .then(pokemons_arr => {
-        const loadingTag_elem = document.querySelector(".loading");
-        loadingTag_elem.remove();
-        pokemons_arr.forEach(pokemon_obj => {
-            console.log(pokemon_obj.name);
-            // J'ai le nom du pokémon 
-            // Je vais l'ajouter au body
 
-            // J'ai besoin d'une balise p
-            const pTag_elem = document.createElement("p");
-            const pImgElm = document.createElement("img");
-            // J'ajoute le nom du pokémon dans le texte de la balise
-            pTag_elem.textContent = pokemon_obj.name;
-            pImgElm.setAttribute("src", pokemon_obj.sprite)
-            // J'ajoute la balise dans le body
-            document.body.appendChild(pTag_elem);
-            document.body.appendChild(pImgElm);
+fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/50")
+    .then(response_obj => response_obj.json())
+    .then(allPokemons => {
+        const loading = document.querySelector(".loading");
+        loading.remove();
+
+        const pokemonList = document.querySelector(".pokemon-list");
+
+        allPokemons.forEach(pokemon => {
+
+            // Création du HTML pour la liste
+            // div card
+            const card = document.createElement("div");
+            card.classList.add("pokemon-card");
+
+            // Pokemon ID 
+            const pokemonId = document.createElement("span");
+            pokemonId.textContent = pokemon.id;
+
+            // Pokemon name 
+            const pokemonName = document.createElement("span");
+            pokemonName.textContent = pokemon.name;
+
+            // Pokemon sprite
+            const pokemonSprite = document.createElement("img");
+            pokemonSprite.src = pokemon.sprite;
+            pokemonSprite.alt = pokemon.name;
+
+            // Formation de la card
+            card.append(pokemonId, pokemonName, pokemonSprite);
+
+            // Insértion dans la séction 
+            pokemonList.append(card);
+
+
         });
     });
