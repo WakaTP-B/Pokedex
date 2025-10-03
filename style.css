@@ -26,12 +26,13 @@ h2 {
 /* Container */
 .container {
   display: flex;
+  /* pour le Scroll */
   min-height: 0;
 }
 
 /* Section Pokémon */
 .pokemon-list {
-  width: 40%;
+  width: 35%;
   overflow-y: auto;
 }
 
@@ -41,7 +42,6 @@ h2 {
   align-items: center;
   cursor: pointer;
 }
-
 
 /* Pokemon detail */
 .pokemon-details {
